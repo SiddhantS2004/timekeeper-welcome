@@ -35,22 +35,28 @@ export default function LoginForm() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle flex items-center justify-center p-4">
-      <div className="w-full max-w-md">
+    <div className="min-h-screen bg-gradient-subtle relative overflow-hidden flex items-center justify-center p-4">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 bg-gradient-glow opacity-30"></div>
+      <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-gradient-primary rounded-full blur-3xl opacity-20 animate-pulse"></div>
+      <div className="absolute bottom-1/3 right-1/3 w-40 h-40 bg-gradient-secondary rounded-full blur-3xl opacity-20 animate-pulse delay-1000"></div>
+      <div className="absolute top-2/3 left-1/2 w-24 h-24 bg-gradient-tertiary rounded-full blur-3xl opacity-20 animate-pulse delay-500"></div>
+      
+      <div className="w-full max-w-md relative z-10">
         {/* Logo and Title */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-primary rounded-2xl mb-4 shadow-glass">
-            <Clock className="w-8 h-8 text-primary-foreground" />
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-rainbow rounded-3xl mb-6 shadow-neon hover:scale-110 transition-bounce cursor-pointer">
+            <Clock className="w-10 h-10 text-primary-foreground animate-spin" style={{ animationDuration: '8s' }} />
           </div>
-          <h1 className="text-3xl font-bold text-foreground mb-2">Time Tracker</h1>
-          <p className="text-muted-foreground">Track your productivity with precision</p>
+          <h1 className="text-4xl font-bold bg-gradient-primary bg-clip-text text-transparent mb-3">Time Tracker</h1>
+          <p className="text-lg text-muted-foreground font-medium">Track your productivity with precision ✨</p>
         </div>
 
-        <Card className="border-0 shadow-glass bg-card/80 backdrop-blur-sm">
-          <CardHeader className="space-y-1 text-center pb-4">
-            <CardTitle className="text-2xl font-semibold">Welcome back</CardTitle>
-            <CardDescription>
-              Sign in to your account to continue tracking
+        <Card className="border border-primary/20 shadow-colorful bg-card/90 backdrop-blur-lg hover:shadow-neon transition-bounce">
+          <CardHeader className="space-y-3 text-center pb-6">
+            <CardTitle className="text-3xl font-bold bg-gradient-secondary bg-clip-text text-transparent">Welcome back</CardTitle>
+            <CardDescription className="text-base text-muted-foreground">
+              Sign in to your account to continue tracking 🚀
             </CardDescription>
           </CardHeader>
           
@@ -60,15 +66,15 @@ export default function LoginForm() {
                 <Label htmlFor="email" className="text-sm font-medium">
                   Email address
                 </Label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <div className="relative group">
+                  <Mail className="absolute left-3 top-3 h-5 w-5 text-primary group-focus-within:text-secondary transition-smooth z-10" />
                   <Input
                     id="email"
                     type="email"
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="pl-10 h-12 border-border/50 bg-background/50 focus:bg-background transition-smooth"
+                    className="pl-12 h-14 border-2 border-primary/30 bg-gradient-glow focus:border-primary focus:shadow-glass hover:border-secondary/50 transition-bounce text-base rounded-xl"
                     required
                   />
                 </div>
@@ -78,15 +84,15 @@ export default function LoginForm() {
                 <Label htmlFor="password" className="text-sm font-medium">
                   Password
                 </Label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
+                <div className="relative group">
+                  <Lock className="absolute left-3 top-3 h-5 w-5 text-primary group-focus-within:text-secondary transition-smooth z-10" />
                   <Input
                     id="password"
                     type="password"
                     placeholder="Enter your password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="pl-10 h-12 border-border/50 bg-background/50 focus:bg-background transition-smooth"
+                    className="pl-12 h-14 border-2 border-primary/30 bg-gradient-glow focus:border-primary focus:shadow-glass hover:border-secondary/50 transition-bounce text-base rounded-xl"
                     required
                   />
                 </div>
@@ -104,10 +110,11 @@ export default function LoginForm() {
 
               <Button 
                 type="submit" 
-                className="w-full h-12 text-base font-medium"
+                className="w-full h-14 text-lg font-semibold rounded-xl"
                 disabled={isLoading}
+                variant="rainbow"
               >
-                {isLoading ? "Signing in..." : "Sign in"}
+                {isLoading ? "✨ Signing in..." : "🚀 Sign in"}
               </Button>
             </form>
 
@@ -123,10 +130,10 @@ export default function LoginForm() {
             <Button
               variant="google"
               onClick={handleGoogleLogin}
-              className="w-full h-12 text-base font-medium"
+              className="w-full h-14 text-lg font-semibold rounded-xl"
             >
-              <Chrome className="w-5 h-5 mr-2" />
-              Continue with Google
+              <Chrome className="w-6 h-6 mr-3" />
+              🔗 Continue with Google
             </Button>
 
             <div className="text-center text-sm text-muted-foreground">

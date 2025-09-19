@@ -9,13 +9,15 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-gradient-primary text-primary-foreground hover:opacity-90 shadow-elegant",
-        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline: "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
-        secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-        google: "bg-background border border-border text-foreground hover:bg-accent shadow-elegant",
+        default: "bg-gradient-primary text-primary-foreground hover:scale-105 hover:shadow-colorful shadow-elegant transition-bounce",
+        destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90 shadow-elegant",
+        outline: "border border-input bg-background hover:bg-gradient-glow hover:text-accent-foreground hover:border-primary transition-smooth",
+        secondary: "bg-gradient-secondary text-secondary-foreground hover:scale-105 hover:shadow-neon shadow-elegant transition-bounce",
+        tertiary: "bg-gradient-tertiary text-tertiary-foreground hover:scale-105 hover:shadow-colorful shadow-elegant transition-bounce",
+        ghost: "hover:bg-gradient-glow hover:text-accent-foreground transition-smooth",
+        link: "text-primary underline-offset-4 hover:underline transition-smooth",
+        google: "bg-card border border-border text-foreground hover:bg-gradient-glow hover:border-primary shadow-elegant transition-smooth",
+        rainbow: "bg-gradient-rainbow text-primary-foreground hover:scale-110 hover:shadow-neon shadow-colorful transition-bounce animate-pulse",
       },
       size: {
         default: "h-10 px-4 py-2",

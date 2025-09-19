@@ -23,10 +23,17 @@ export default {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
           glow: "hsl(var(--primary-glow))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          glow: "hsl(var(--secondary-glow))",
+        },
+        tertiary: {
+          DEFAULT: "hsl(var(--tertiary))",
+          foreground: "hsl(var(--tertiary-foreground))",
+          glow: "hsl(var(--tertiary-glow))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
@@ -66,14 +73,21 @@ export default {
       },
       backgroundImage: {
         "gradient-primary": "var(--gradient-primary)",
+        "gradient-secondary": "var(--gradient-secondary)",
+        "gradient-tertiary": "var(--gradient-tertiary)",
+        "gradient-rainbow": "var(--gradient-rainbow)",
         "gradient-subtle": "var(--gradient-subtle)",
+        "gradient-glow": "var(--gradient-glow)",
       },
       boxShadow: {
+        colorful: "var(--shadow-colorful)",
         elegant: "var(--shadow-elegant)",
         glass: "var(--shadow-glass)",
+        neon: "var(--shadow-neon)",
       },
       transitionTimingFunction: {
         smooth: "var(--transition-smooth)",
+        bounce: "var(--transition-bounce)",
       },
       keyframes: {
         "accordion-down": {
