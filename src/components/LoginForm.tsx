@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
 import { Clock, Mail, Lock, Chrome } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -138,9 +139,9 @@ export default function LoginForm() {
 
             <div className="text-center text-sm text-muted-foreground">
               Don't have an account?{" "}
-              <button className="text-primary hover:text-primary/80 font-medium transition-smooth">
-                Sign up
-              </button>
+              <Link to="/signup" className="text-primary hover:text-secondary font-medium transition-smooth">
+                Sign up here
+              </Link>
             </div>
           </CardContent>
         </Card>
